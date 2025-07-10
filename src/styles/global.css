@@ -1,0 +1,60 @@
+/* src/styles/global.css */
+
+:root {
+  --bg-primary: #1a2a3a; /* Fondo principal (azul oscuro) */
+  --bg-secondary: #282c37; /* Fondo de tarjetas (gris oscuro) */
+  --text-primary: #ffffff; /* Texto principal (blanco) */
+  --text-secondary: #a0a0a0; /* Texto secundario (gris claro) */
+  --accent-purple: #8a49e0; /* Acento morado para botones/activos */
+  --accent-green: #34d399; /* Para estados 'Reposo' o positivos */
+  --accent-orange: #fbbf24; /* Para estados 'Ibuprofeno' o neutros */
+  --accent-blue: #60a5fa; /* Para enlaces o texto info */
+
+  --border-radius-lg: 12px;
+  --sidebar-width: 250px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+#root {
+  display: flex; /* Para el layout principal de la app */
+  min-height: 100vh;
+}
+
+/* Estilos de botones genéricos */
+button {
+  background-color: var(--accent-purple);
+  color: var(--text-primary);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #7a3ecf;
+}
+
+/* Para los botones con fondo transparente */
+button.text-button {
+  background: none;
+  color: var(--accent-blue);
+  padding: 0;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+button.text-button:hover {
+  text-decoration: underline;
+  background: none;
+}

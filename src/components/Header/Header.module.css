@@ -1,0 +1,76 @@
+/* src/components/Header/Header.module.css */
+.header {
+  background-color: var(--bg-primary);
+  padding: 15px 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: flex-end; /* Alinea los elementos a la derecha */
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0; /* Asegura que no se encoja */
+}
+
+.datePicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 0.9em;
+}
+
+.dateInput {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 1em;
+  outline: none;
+  width: 200px;
+  text-align: center;
+}
+
+.calendarButton {
+  background-color: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendarButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.userAvatar {
+  font-size: 2.5em;
+  color: var(--text-secondary);
+  border-radius: 50%;
+}
+
+.userName {
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.icon {
+  font-size: 1.2em;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.icon:hover {
+  color: var(--text-primary);
+}

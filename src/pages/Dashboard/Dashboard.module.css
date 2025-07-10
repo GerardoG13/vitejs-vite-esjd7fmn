@@ -1,0 +1,25 @@
+/* src/pages/Dashboard/Dashboard.module.css */
+.dashboardContainer {
+  padding: 20px;
+  background-color: var(--bg-primary); /* Asegura que el fondo sea el mismo que el principal */
+  color: var(--text-primary);
+}
+
+.pageTitle {
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: var(--text-primary);
+}
+
+.welcomeText {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Columnas responsivas */
+  gap: 25px; /* Espacio entre las tarjetas */
+}

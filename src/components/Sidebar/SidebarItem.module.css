@@ -1,0 +1,41 @@
+/* src/components/Sidebar/SidebarItem.module.css */
+.sidebarItem {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 0.95em;
+  font-weight: 500;
+}
+
+.sidebarItem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebarItem.active {
+  background-color: var(--accent-purple);
+  color: var(--text-primary);
+}
+
+.sidebarItem.active:hover {
+  background-color: #7a3ecf; /* Un tono un poco más oscuro al pasar el mouse */
+}
+
+.icon {
+  font-size: 1.3em;
+  margin-right: 12px;
+}
+
+.sectionTitle {
+  color: var(--text-secondary);
+  font-size: 0.8em;
+  font-weight: 600;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
