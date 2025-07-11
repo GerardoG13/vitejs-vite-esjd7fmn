@@ -1,7 +1,7 @@
 // src/pages/DatosPrincipales/DatosPrincipalesPage.jsx
 import React, { useEffect, useState } from 'react';
 import { getPacienteById } from '../../services/api';
-import styles from './DatosPrincipalesPage.module.css'; // Puedes crear un CSS Module para cada página
+import styles from './DatosPrincipalesPage.module.css'; 
 
 function DatosPrincipalesPage({ pacienteId }) {
     const [paciente, setPaciente] = useState(null);
@@ -20,7 +20,7 @@ function DatosPrincipalesPage({ pacienteId }) {
                 setPaciente(response.data);
             } catch (err) {
                 console.error("Error al obtener datos principales:", err);
-                setError(new Error(`Error al cargar datos: ${err.message}. Asegúrate que el backend esté corriendo y CORS configurado.`));
+                setError(new Error(`Error al cargar datos: ${err.message}. `));
             } finally {
                 setLoading(false);
             }
@@ -31,7 +31,7 @@ function DatosPrincipalesPage({ pacienteId }) {
     if (loading) {
         return (
             <div className={styles.pageContainer}>
-                <h1 className={styles.pageTitle}>Datos Principales del Paciente</h1>
+                <h1 className={styles.pageTitle}>Datos Principales </h1>
                 <p>Cargando datos...</p>
             </div>
         );
@@ -40,7 +40,7 @@ function DatosPrincipalesPage({ pacienteId }) {
     if (error) {
         return (
             <div className={styles.pageContainer}>
-                <h1 className={styles.pageTitle}>Datos Principales del Paciente</h1>
+                <h1 className={styles.pageTitle}>Datos Principales </h1>
                 <p style={{ color: 'red' }}>Error: {error.message}</p>
             </div>
         );
@@ -49,7 +49,7 @@ function DatosPrincipalesPage({ pacienteId }) {
     if (!paciente) {
         return (
             <div className={styles.pageContainer}>
-                <h1 className={styles.pageTitle}>Datos Principales del Paciente</h1>
+                <h1 className={styles.pageTitle}>Datos Principales</h1>
                 <p>No se encontraron datos para este paciente.</p>
             </div>
         );
@@ -80,7 +80,6 @@ function DatosPrincipalesPage({ pacienteId }) {
                 <div className={styles.detailItem}>
                     <strong>Dirección:</strong> {paciente.direccion || 'N/A'}
                 </div>
-                {/* Agrega más campos relevantes según tu API */}
             </div>
         </div>
     );

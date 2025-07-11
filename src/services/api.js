@@ -1,9 +1,7 @@
 // src/services/api.js
 import axios from 'axios';
 
-// La URL base de tu backend. ¡Esto es crucial!
-// Asegúrate de que sea 'http://localhost:8080' como indicaste.
-const API_BASE_URL = 'http://localhost:8080';
+const API_BASE_URL = '172.31.43.50';
 
 // Crea una instancia de Axios con la URL base
 const api = axios.create({
@@ -11,15 +9,7 @@ const api = axios.create({
   headers: {
     'Content-Type': 'application/json', // Indica que enviamos y esperamos JSON
   },
-  // Aquí puedes añadir interceptores para tokens de autenticación, manejo de errores global, etc.
-  // Por ejemplo:
-  // interceptors.request.use((config) => {
-  //   const token = localStorage.getItem('token');
-  //   if (token) {
-  //     config.headers.Authorization = `Bearer ${token}`;
-  //   }
-  //   return config;
-  // });
+
 });
 
 // --- Métodos para AccesoExpediente ---

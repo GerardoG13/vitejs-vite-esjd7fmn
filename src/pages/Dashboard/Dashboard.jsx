@@ -10,12 +10,9 @@ import HistorialMedicoCard from '../../components/Cards/HistorialMedicoCard';
 import ProximaCitaCard from '../../components/Cards/ProximaCitaCard';
 import OtrasCitasCard from '../../components/Cards/OtrasCitasCard';
 
-// El componente Dashboard ahora recibe 'pacienteId' como una prop.
-// Este 'pacienteId' viene de la ruta en App.jsx.
+
 function Dashboard({ pacienteId }) {
-    // Ya NO necesitamos 'const currentPacienteId = 1;' aquí,
-    // porque 'pacienteId' ya nos llega como prop desde App.jsx.
-    // Esto hace que el ID del paciente sea más gestionable a nivel de aplicación.
+
 
     return (
         <div className={styles.dashboardContainer}>

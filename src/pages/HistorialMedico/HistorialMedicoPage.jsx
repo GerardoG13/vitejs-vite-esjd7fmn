@@ -86,7 +86,7 @@ function HistorialMedicoPage({ pacienteId }) {
 
             } catch (err) {
                 console.error("Error al obtener historial completo:", err);
-                setError(new Error(`Error al cargar historial: ${err.message}. Asegúrate que el backend esté corriendo y CORS configurado.`));
+                setError(new Error(`Error al cargar historial: ${err.message}. `));
             } finally {
                 setLoading(false);
             }

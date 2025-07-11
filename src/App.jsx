@@ -18,18 +18,14 @@ import OpcionesPage from './pages/Opciones/OpcionesPage';
 import './styles/global.css';
 
 function App() {
-    // IMPORTANTE: El ID del paciente debe venir de un contexto global o autenticación
-    // Por ahora, lo mantenemos aquí para que las páginas puedan cargar datos.
-    const currentPacienteId = 1; // ¡Asegúrate que este ID exista en tu tabla de Pacientes!
 
-    // useNavigate se usa para navegar programáticamente (ej. después de un logout)
-    // Para la SidebarItem, usaremos el componente <Link> directamente.
+    const currentPacienteId = 1; 
 
     // Función para manejar "Cerrar Sección"
     const handleLogout = () => {
         alert('Cerrando sesión...');
         // Aquí iría la lógica para limpiar tokens/sesiones y redirigir al login
-        // navigate('/login'); // Si tuvieras una página de login
+        // navigate('/login'); // 
     };
 
     return (
