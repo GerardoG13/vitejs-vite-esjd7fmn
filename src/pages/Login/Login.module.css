@@ -1,0 +1,64 @@
+/* src/pages/Login/Login.module.css */
+
+.loginContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: #0f172a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginCard {
+  background-color: #1e293b;
+  padding: 2.5rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.loginCard h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.loginCard label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.loginCard input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #334155;
+  color: #fff;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+.loginCard input:focus {
+  outline: 2px solid #7c3aed;
+}
+
+.loginCard button {
+  width: 100%;
+  background-color: #7c3aed;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.loginCard button:hover {
+  background-color: #6d28d9;
+}
