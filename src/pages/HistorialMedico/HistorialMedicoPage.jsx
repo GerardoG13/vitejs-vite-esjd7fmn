@@ -25,7 +25,7 @@ function HistorialMedicoPage({ pacienteId }) {
                     getDocumentosClinicos(),
                     getPacienteById(pacienteId),
                     getPersonalSalud(),
-                    getMedicamentos(), // Si necesitas asociar medicamentos a prescripciones
+                    getMedicamentos(),
                     getPrescripciones()
                 ]);
 

@@ -42,8 +42,7 @@ function DatosPersonalesCard({ pacienteId }) {
         return <Card title="Datos Personales">No se encontraron datos personales para el ID {pacienteId}.</Card>;
     }
 
-    // Asegúrate de que las propiedades coincidan con la respuesta de tu API
-    // Por ejemplo: si tu backend envía 'primerNombre' y 'apellido', adapta aquí.
+
     const fullName = `${paciente.nombre || ''} ${paciente.apellidoPaterno || ''} ${paciente.apellidoMaterno || ''}`.trim();
     const idCurp = paciente.curp || paciente.id || 'No disponible';
     const phoneEmail = `${paciente.telefono || 'N/A'} / ${paciente.correo || 'N/A'}`;

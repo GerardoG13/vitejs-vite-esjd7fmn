@@ -17,12 +17,11 @@ function LabResultsCard({ pacienteId }) {
                 return;
             }
             try {
-                const response = await getResultadosLaboratorio(); // Idealmente, tu API debería tener /resultados-laboratorio/paciente/{id}
+                const response = await getResultadosLaboratorio(); 
                 const allResults = response.data;
 
-                // Filtrar por pacienteId si la API no lo hace y ordenar por fecha (la más reciente primero)
                 const patientResults = allResults
-                    .filter(res => res.idPaciente === pacienteId) // Ajusta 'idPaciente' al nombre real de la prop
+                    .filter(res => res.idPaciente === pacienteId) 
                     .sort((a, b) => new Date(b.fechaEmision) - new Date(a.fechaEmision));
 
                 setLastResult(patientResults.length > 0 ? patientResults[0] : null);

@@ -33,14 +33,14 @@ export const createConsulta = (data) => api.post('/consultas', data);
 export const updateConsulta = (id, data) => api.put(`/consultas/${id}`, data);
 export const deleteConsulta = (id) => api.delete(`/consultas/${id}`);
 
-// --- Métodos para ResultadoLaboratorio (relevante para el dashboard) ---
+// --- Métodos para ResultadoLaboratorio 
 export const getResultadosLaboratorio = () => api.get('/resultados-laboratorio');
 export const getResultadoLaboratorioById = (id) => api.get(`/resultados-laboratorio/${id}`);
 export const createResultadoLaboratorio = (data) => api.post('/resultados-laboratorio', data);
 export const updateResultadoLaboratorio = (id, data) => api.put(`/resultados-laboratorio/${id}`, data);
 export const deleteResultadoLaboratorio = (id) => api.delete(`/resultados-laboratorio/${id}`);
 
-// --- Métodos para Notificacion (si las quieres mostrar) ---
+// --- Métodos para Notificacion 
 export const getNotificaciones = () => api.get('/notificaciones');
 export const getNotificacionById = (id) => api.get(`/notificaciones/${id}`);
 export const createNotificacion = (data) => api.post('/notificaciones', data);
@@ -54,8 +54,8 @@ export const getPrescripciones = () => api.get('/prescripciones'); // Prescripci
 export const getMedicamentos = () => api.get('/medicamentos'); // Medicamento
 export const getPersonalSalud = () => api.get('/personal-salud'); // PersonalSalud
 
-export const getInstituciones = () => api.get('/instituciones'); // <-- ¡Añade esta línea!
-export const getInstitucionById = (id) => api.get(`/instituciones/${id}`); // <-- (Opcional) Esta también podría ser útil
+export const getInstituciones = () => api.get('/instituciones'); 
+export const getInstitucionById = (id) => api.get(`/instituciones/${id}`); 
 export const createInstitucion = (data) => api.post('/instituciones', data);
 export const updateInstitucion = (id, data) => api.put(`/instituciones/${id}`, data);
 export const deleteInstitucion = (id) => api.delete(`/instituciones/${id}`);

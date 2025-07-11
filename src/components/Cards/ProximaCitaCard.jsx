@@ -1,7 +1,7 @@
 // src/components/Cards/ProximaCitaCard.jsx
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
-import { getConsultas, getPersonalSalud, getInstituciones } from '../../services/api'; // Necesitamos info de Instituciones y PersonalSalud
+import { getConsultas, getPersonalSalud, getInstituciones } from '../../services/api'; 
 
 function ProximaCitaCard({ pacienteId }) {
     const [nextAppointment, setNextAppointment] = useState(null);

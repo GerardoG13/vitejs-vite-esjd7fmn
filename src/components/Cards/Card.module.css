@@ -23,12 +23,12 @@
 .subtitle {
   font-size: 0.85em;
   color: var(--text-secondary);
-  margin-left: 10px; /* Para subtítulos que van al lado del título */
+  margin-left: 10px; 
 }
 
-/* Si el subtítulo va debajo del título */
+
 .header .subtitle {
-  display: block; /* Ocupa su propia línea */
+  display: block; 
   font-size: 0.85em;
   color: var(--text-secondary);
   margin-top: 5px;

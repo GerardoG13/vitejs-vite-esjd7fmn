@@ -33,7 +33,7 @@ function OtrasCitasCard({ pacienteId }) {
                     .filter(c => c.idPaciente === pacienteId && new Date(c.fecha) >= now)
                     .sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
 
-                // Tomar todas excepto la primera (que se muestra en ProximaCitaCard)
+
                 setOtherAppointments(allUpcoming.slice(1, 3)); // Muestra las siguientes 2 citas
 
             } catch (err) {

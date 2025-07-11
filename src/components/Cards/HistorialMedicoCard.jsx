@@ -47,7 +47,7 @@ function HistorialMedicoCard({ pacienteId }) {
                         icon: FaStethoscope,
                     }));
 
-                // Filtrar y mapear documentos clínicos (ej: si tienen fecha y están relacionados al paciente)
+                // Filtrar y mapear documentos clínicos 
                 const patientDocuments = documentosRes.data
                     .filter(doc => doc.idPaciente === pacienteId) // Ajusta 'idPaciente'
                     .map(doc => ({
@@ -55,8 +55,8 @@ function HistorialMedicoCard({ pacienteId }) {
                         id: doc.id,
                         name: nombrePaciente,
                         date: new Date(doc.fechaCreacion).toLocaleDateString('es-ES', { day: '2-digit', month: 'short' }), // Ajusta la prop de fecha
-                        medicOrCategory: doc.tipoDocumento || 'Documento', // Ajusta la prop de tipo
-                        diagnosisOrAmount: doc.descripcion || 'Ver documento', // Ajusta la prop de descripción
+                        medicOrCategory: doc.tipoDocumento || 'Documento', 
+                        diagnosisOrAmount: doc.descripcion || 'Ver documento', 
                         icon: FaFileAlt,
                     }));
 
