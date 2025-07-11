@@ -1,0 +1,74 @@
+/* src/pages/HistorialMedico/HistorialMedicoPage.module.css */
+.pageContainer {
+    padding: 20px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: calc(100vh - 60px);
+}
+
+.pageTitle {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--text-primary);
+}
+
+.historialList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.historialItem {
+    background-color: var(--bg-secondary);
+    padding: 15px 20px;
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.iconContainer {
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+    color: var(--text-primary);
+}
+
+.itemContent {
+    flex-grow: 1;
+}
+
+.itemHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.itemType {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: var(--text-primary);
+}
+
+.itemDate {
+    font-size: 0.85em;
+    color: var(--text-secondary);
+}
+
+.itemDescription {
+    margin: 0 0 5px 0;
+    font-size: 0.95em;
+    color: var(--text-primary);
+}
+
+.itemDetails {
+    margin: 0;
+    font-size: 0.85em;
+    color: var(--text-secondary);
+}
