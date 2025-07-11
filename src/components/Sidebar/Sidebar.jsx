@@ -1,76 +1,91 @@
 // src/components/Sidebar/Sidebar.jsx
-import React, { useState } from 'react';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom'; // Importa Link y useLocation
 import styles from './Sidebar.module.css';
 import SidebarItem from './SidebarItem';
 
-// Importa los íconos de react-icons
 import {
-  FaHome,
-  FaUser,
-  FaHistory,
-  FaVial,
-  FaStethoscope,
-  FaCalendarAlt,
-  FaChild,
-  FaCog,
-  FaSignOutAlt,
-  FaCreditCard,
+    FaHome, FaUser, FaHistory, FaVial, FaStethoscope,
+    FaCalendarAlt, FaChild, FaCog, FaSignOutAlt, FaCreditCard
 } from 'react-icons/fa';
 
-function Sidebar() {
-  const [activeItem, setActiveItem] = useState('Dashboard'); // Estado para el item activo
+// Recibe la función de logout como prop
+function Sidebar({ handleLogout }) {
+    const location = useLocation(); // Hook para obtener la URL actual
 
-  const navItems = [
-    { text: 'Dashboard', icon: FaHome },
-    { text: 'Datos principales', icon: FaUser },
-    { text: 'Historial Med.', icon: FaHistory },
-    { text: 'Laboratorios', icon: FaVial },
-    { text: 'Consultas', icon: FaStethoscope },
-    { text: 'Citas', icon: FaCalendarAlt },
-    { text: 'Menores Edad', icon: FaChild },
-  ];
+    const navItems = [
+        { text: 'Dashboard', icon: FaHome, to: '/dashboard' },
+        { text: 'Datos principales', icon: FaUser, to: '/datos-principales' },
+        { text: 'Historial Med.', icon: FaHistory, to: '/historial-medico' },
+        { text: 'Laboratorios', icon: FaVial, to: '/laboratorios' },
+        { text: 'Consultas', icon: FaStethoscope, to: '/consultas' },
+        { text: 'Citas', icon: FaCalendarAlt, to: '/citas' },
+        { text: 'Menores Edad', icon: FaChild, to: '/menores-edad' },
+    ];
 
-  const accountItems = [
-    { text: 'Perfil', icon: FaUser },
-    { text: 'Opciones', icon: FaCog },
-    { text: 'Cerrar Seccion', icon: FaSignOutAlt },
-  ];
+    const accountItems = [
+        { text: 'Perfil', icon: FaUser, to: '/perfil' },
+        { text: 'Opciones', icon: FaCog, to: '/opciones' },
+        { text: 'Cerrar Seccion', icon: FaSignOutAlt, onClick: handleLogout }, // Este tiene un onClick, no una ruta
+    ];
 
-  return (
-    <div className={styles.sidebar}>
-      <div className={styles.logo}>
-        <FaCreditCard className={styles.logoIcon} />
-        <span>Dashboard</span>
-      </div>
+    return (
+        <div className={styles.sidebar}>
+            <div className={styles.logo}>
+                <FaCreditCard className={styles.logoIcon} />
+                <span>Placeholder</span>
+            </div>
 
-      <nav className={styles.navigation}>
-        {navItems.map((item) => (
-          <SidebarItem
-            key={item.text}
-            icon={item.icon}
-            text={item.text}
-            isActive={activeItem === item.text}
-            onClick={() => setActiveItem(item.text)}
-          />
-        ))}
-      </nav>
+            <nav className={styles.navigation}>
+                {navItems.map((item) => (
+                    // Usamos Link si tiene una propiedad 'to'
+                    item.to ? (
+                        <Link to={item.to} key={item.text} className={styles.linkWrapper}>
+                            <SidebarItem
+                                icon={item.icon}
+                                text={item.text}
+                                isActive={location.pathname === item.to || (item.to === '/dashboard' && location.pathname === '/')} // Resalta '/' si dashboard
+                            />
+                        </Link>
+                    ) : (
+                        // Para items sin ruta (ej. Cerrar Sección), usa el SidebarItem normal con onClick
+                        <SidebarItem
+                            key={item.text}
+                            icon={item.icon}
+                            text={item.text}
+                            onClick={item.onClick}
+                            isActive={false} // No estará activo por ruta
+                        />
+                    )
+                ))}
+            </nav>
 
-      <div className={styles.divider}></div>
+            <div className={styles.divider}></div>
 
-      <SidebarItem text="DETALLES DE CUENTA" isSectionTitle />
-      <nav className={styles.accountNavigation}>
-        {accountItems.map((item) => (
-          <SidebarItem
-            key={item.text}
-            icon={item.icon}
-            text={item.text}
-            isActive={activeItem === item.text}
-            onClick={() => setActiveItem(item.text)}
-          />
-        ))}
-      </nav>
-    </div>
-  );
+            <SidebarItem text="DETALLES DE CUENTA" isSectionTitle />
+            <nav className={styles.accountNavigation}>
+                {accountItems.map((item) => (
+                    item.to ? (
+                        <Link to={item.to} key={item.text} className={styles.linkWrapper}>
+                            <SidebarItem
+                                icon={item.icon}
+                                text={item.text}
+                                isActive={location.pathname === item.to}
+                            />
+                        </Link>
+                    ) : (
+                        <SidebarItem
+                            key={item.text}
+                            icon={item.icon}
+                            text={item.text}
+                            onClick={item.onClick}
+                            isActive={false}
+                        />
+                    )
+                ))}
+            </nav>
+        </div>
+    );
 }
 
 export default Sidebar;
